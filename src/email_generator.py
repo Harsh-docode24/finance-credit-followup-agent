@@ -7,15 +7,17 @@ Outputs are validated through Pydantic structured output schemas.
 """
 
 import json
+import time
 from datetime import date
 
-from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 from rich.console import Console
 
 from src.config import (
     GOOGLE_API_KEY,
+    GROQ_API_KEY,
+    LLM_PROVIDER,
     LLM_MODEL,
     COMPANY_NAME,
     COMPANY_PHONE,
@@ -26,6 +28,10 @@ from src.config import (
 from src.models import CreditRecord, GeneratedEmail
 
 console = Console()
+
+# Rate limit delay (seconds) between API calls to avoid quota exhaustion
+API_CALL_DELAY = 2
+MAX_RETRIES = 3
 
 # ── System Prompt ─────────────────────────────────────────
 # This is a carefully crafted system prompt with guardrails
@@ -76,26 +82,41 @@ Respond with a JSON object containing:
 ])
 
 
-def _init_llm() -> ChatGoogleGenerativeAI:
-    """Initialize the Google Gemini LLM with safety settings."""
-    if not GOOGLE_API_KEY:
-        raise ValueError(
-            "GOOGLE_API_KEY is not set. Please set it in your .env file.\n"
-            "Get a free key at: https://aistudio.google.com/app/apikey"
+def _init_llm():
+    """Initialize the LLM based on the configured provider (Groq or Gemini)."""
+    if LLM_PROVIDER == "groq":
+        if not GROQ_API_KEY:
+            raise ValueError(
+                "GROQ_API_KEY is not set. Please set it in your .env file.\n"
+                "Get a free key at: https://console.groq.com/keys"
+            )
+        from langchain_groq import ChatGroq
+        return ChatGroq(
+            model=LLM_MODEL,
+            groq_api_key=GROQ_API_KEY,
+            temperature=0.3,
+            max_tokens=1024,
         )
-
-    return ChatGoogleGenerativeAI(
-        model=LLM_MODEL,
-        google_api_key=GOOGLE_API_KEY,
-        temperature=0.3,  # Low temperature for consistent, professional output
-        max_output_tokens=1024,
-        convert_system_message_to_human=True,
-    )
+    else:
+        if not GOOGLE_API_KEY:
+            raise ValueError(
+                "GOOGLE_API_KEY is not set. Please set it in your .env file.\n"
+                "Get a free key at: https://aistudio.google.com/app/apikey"
+            )
+        from langchain_google_genai import ChatGoogleGenerativeAI
+        return ChatGoogleGenerativeAI(
+            model=LLM_MODEL,
+            google_api_key=GOOGLE_API_KEY,
+            temperature=0.3,
+            max_output_tokens=1024,
+            convert_system_message_to_human=True,
+        )
 
 
 def generate_email(record: CreditRecord) -> GeneratedEmail | None:
     """
     Generate a personalised follow-up email for a single credit record.
+    Includes retry logic with exponential backoff for rate limit handling.
     
     Args:
         record: The credit record to generate an email for.
@@ -129,38 +150,56 @@ def generate_email(record: CreditRecord) -> GeneratedEmail | None:
     parser = JsonOutputParser()
     chain = EMAIL_PROMPT | llm | parser
 
-    try:
-        # Invoke the LLM
-        result = chain.invoke({
-            "company_name": COMPANY_NAME,
-            "company_phone": COMPANY_PHONE,
-            "invoice_no": record.invoice_no,
-            "client_name": record.client_name,
-            "formatted_amount": record.formatted_amount,
-            "due_date": str(record.due_date),
-            "days_overdue": days_overdue,
-            "payment_link": payment_link,
-            "stage_name": stage_config["stage_name"],
-            "stage_number": stage,
-            "tone": stage_config["tone"],
-            "key_message": stage_config["key_message"],
-            "cta": stage_config["cta"],
-            "follow_up_count": record.follow_up_count,
-        })
+    # Retry loop with exponential backoff for rate limits
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            # Delay between API calls to respect rate limits
+            if attempt > 1:
+                wait_time = API_CALL_DELAY * attempt
+                console.print(f"  [yellow]⏳ Retry {attempt}/{MAX_RETRIES} — waiting {wait_time}s...[/yellow]")
+                time.sleep(wait_time)
 
-        # Validate through Pydantic
-        email = GeneratedEmail(**result)
+            # Invoke the LLM
+            result = chain.invoke({
+                "company_name": COMPANY_NAME,
+                "company_phone": COMPANY_PHONE,
+                "invoice_no": record.invoice_no,
+                "client_name": record.client_name,
+                "formatted_amount": record.formatted_amount,
+                "due_date": str(record.due_date),
+                "days_overdue": days_overdue,
+                "payment_link": payment_link,
+                "stage_name": stage_config["stage_name"],
+                "stage_number": stage,
+                "tone": stage_config["tone"],
+                "key_message": stage_config["key_message"],
+                "cta": stage_config["cta"],
+                "follow_up_count": record.follow_up_count,
+            })
 
-        console.print(
-            f"  [green]✉️  {record.invoice_no}: Generated Stage {stage} email "
-            f"({stage_config['tone']})[/green]"
-        )
+            # Validate through Pydantic
+            email = GeneratedEmail(**result)
 
-        return email
+            console.print(
+                f"  [green]✉️  {record.invoice_no}: Generated Stage {stage} email "
+                f"({stage_config['tone']})[/green]"
+            )
 
-    except Exception as e:
-        console.print(f"  [red]❌ {record.invoice_no}: Email generation failed — {str(e)}[/red]")
-        return None
+            # Delay after successful call to avoid hitting rate limit on next call
+            time.sleep(API_CALL_DELAY)
+
+            return email
+
+        except Exception as e:
+            error_str = str(e)
+            if "429" in error_str or "RESOURCE_EXHAUSTED" in error_str:
+                if attempt < MAX_RETRIES:
+                    console.print(f"  [yellow]⚠️  Rate limited on {record.invoice_no}, retrying...[/yellow]")
+                    continue
+            console.print(f"  [red]❌ {record.invoice_no}: Email generation failed — {error_str[:200]}[/red]")
+            return None
+
+    return None
 
 
 def generate_emails_batch(records: list[CreditRecord]) -> list[tuple[CreditRecord, GeneratedEmail | None, int]]:

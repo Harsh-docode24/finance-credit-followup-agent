@@ -22,8 +22,10 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 LOG_DIR.mkdir(exist_ok=True)
 
 # ── LLM Configuration ─────────────────────────────────────
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "groq")  # "gemini" or "groq"
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
-LLM_MODEL = os.getenv("LLM_MODEL", "gemini-1.5-flash")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+LLM_MODEL = os.getenv("LLM_MODEL", "llama-3.3-70b-versatile")
 
 # ── Email Configuration ───────────────────────────────────
 EMAIL_MODE = os.getenv("EMAIL_MODE", "dry_run")  # "dry_run" or "smtp"
@@ -107,8 +109,10 @@ def get_escalation_stage(days_overdue: int, follow_up_count: int) -> int:
 def validate_config() -> list[str]:
     """Validate that essential configuration is present. Returns list of warnings."""
     warnings = []
-    if not GOOGLE_API_KEY:
+    if LLM_PROVIDER == "gemini" and not GOOGLE_API_KEY:
         warnings.append("⚠️  GOOGLE_API_KEY is not set. LLM features will not work.")
+    if LLM_PROVIDER == "groq" and not GROQ_API_KEY:
+        warnings.append("⚠️  GROQ_API_KEY is not set. LLM features will not work.")
     if EMAIL_MODE == "smtp":
         if not SMTP_USERNAME:
             warnings.append("⚠️  SMTP_USERNAME is not set but EMAIL_MODE is 'smtp'.")
