@@ -1,62 +1,92 @@
 [
   {
-    "timestamp": "2025-05-11T12:30:15.123456",
-    "to": "ananya.d@mediapulse.com",
-    "to_name": "Ananya Desai",
-    "invoice_no": "INV-2024-006",
-    "subject": "Quick Reminder \u2013 Invoice #INV-2024-006 | \u20b91,76,000 Due",
-    "body": "Hi Ananya,\n\nI hope you\u2019re doing well! This is a friendly reminder that Invoice #INV-2024-006 for \u20b91,76,000 was due on 01 May 2025.\n\nIf you have already processed this payment, please disregard this message. Otherwise, you can make a quick payment using the link below:\n\n\ud83d\udd17 Pay Now: https://pay.acmecorp.com/invoice/INV-2024-006\n\nIf you have any questions about this invoice, feel free to reach out.\n\nThank you!\n\nWarm regards,\nAcme Corp Finance Department\n\ud83d\udcde +91-9876543210",
+    "timestamp": "2026-05-11T17:00:07.810494",
+    "to": "rajesh.kapoor@techsolutions.in",
+    "to_name": "Rajesh Kapoor",
+    "invoice_no": "INV-2024-001",
+    "subject": "Overdue Invoice INV-2024-001 for ₹345,000",
+    "body": "Dear Rajesh Kapoor,\n\nWe hope this email finds you well. We wanted to reach out to you regarding your invoice INV-2024-001, which was due on 2026-05-08. As of today, the invoice is 3 days overdue. We understand that oversights can happen, and we're here to help.\n\nThe amount due is ₹345,000. To avoid any additional delays, we kindly request that you settle this amount at your earliest convenience. You can pay now by visiting our payment link: https://pay.acmecorp.com/invoice/INV-2024-001. Alternatively, if you have any questions or need assistance, please don't hesitate to call us at +91-9876543210.\n\nWe appreciate your prompt attention to this matter, and we look forward to hearing from you soon.\n\nBest regards,\nAcme Corp Finance Department",
     "tone": "Warm & Friendly",
     "stage": 1
   },
   {
-    "timestamp": "2025-05-11T12:30:22.654321",
+    "timestamp": "2026-05-11T17:00:10.693990",
     "to": "priya.s@globalretail.com",
     "to_name": "Priya Sharma",
     "invoice_no": "INV-2024-002",
-    "subject": "Payment Reminder \u2013 Invoice #INV-2024-002 | \u20b91,28,500 (16 Days Overdue)",
-    "body": "Dear Priya,\n\nWe hope this message finds you well. We are writing to follow up on Invoice #INV-2024-002 for \u20b91,28,500, which was due on 25 April 2025 and is now 16 days overdue.\n\nWe understand that payments can sometimes be delayed, and we would appreciate it if you could confirm the expected payment date at your earliest convenience.\n\nPlease use the payment link below to process the payment:\n\n\ud83d\udd17 https://pay.acmecorp.com/invoice/INV-2024-002\n\nIf you have already made this payment, please share the transaction reference so we can update our records.\n\nThank you for your prompt attention to this matter.\n\nBest regards,\nAcme Corp Finance Department\n\ud83d\udcde +91-9876543210",
+    "subject": "Overdue Payment: INV-2024-002 - ₹128,500",
+    "body": "Dear Priya Sharma,\n\nWe are writing to follow up on the payment for Invoice INV-2024-002, which is now 10 days overdue. As per our records, the amount of ₹128,500 is still pending. We understand that unforeseen delays can occur, and we would appreciate it if you could confirm a payment date for the outstanding amount.\n\nFor your convenience, you can make the payment using the following link: https://pay.acmecorp.com/invoice/INV-2024-002. If you have already made the payment, please disregard this notice and accept our apologies for the oversight.\n\nShould you require any assistance or have questions, please do not hesitate to contact us at +91-9876543210.\n\nWe look forward to hearing back from you soon and resolving this matter promptly.\n\nBest regards,\nAcme Corp Finance Department",
     "tone": "Polite but Firm",
     "stage": 2
   },
   {
-    "timestamp": "2025-05-11T12:30:31.987654",
+    "timestamp": "2026-05-11T17:00:13.649120",
     "to": "amit.verma@buildcon.co.in",
     "to_name": "Amit Verma",
     "invoice_no": "INV-2024-003",
-    "subject": "IMPORTANT: Outstanding Payment \u2013 Invoice #INV-2024-003 | \u20b95,67,000 (31 Days Overdue)",
-    "body": "Dear Mr. Verma,\n\nDespite our previous reminders, Invoice #INV-2024-003 for \u20b95,67,000 remains unpaid as of today, now 31 days past its due date of 10 April 2025.\n\nWe must bring to your attention that continued non-payment may impact:\n\u2022 Your credit terms with Acme Corp\n\u2022 Future order processing\n\u2022 Our business relationship\n\nWe request your immediate attention to this matter. Please respond within 48 hours with either:\n1. Confirmation of payment, or\n2. A clear payment commitment date\n\n\ud83d\udd17 Pay Now: https://pay.acmecorp.com/invoice/INV-2024-003\n\ud83d\udcde Call: +91-9876543210\n\nRegards,\nAcme Corp Finance Department",
+    "subject": "Overdue Payment: INV-2024-003 - ₹567,000",
+    "body": "Dear Amit Verma,\n\nWe are writing to express our escalating concern regarding the overdue payment for Invoice Number INV-2024-003, which is now 16 days past the due date of 2026-04-25. The total amount due remains ₹567,000.\n\nThe delayed payment is starting to impact our operations, and we urge you to settle this outstanding amount as soon as possible. To facilitate a swift payment, you can use the following link: https://pay.acmecorp.com/invoice/INV-2024-003. Alternatively, you can contact us at +91-9876543210 for any assistance.\n\nWe request that you respond to this email within the next 48 hours with an update on the payment status. Your prompt attention to this matter is greatly appreciated.\n\nThank you for your cooperation.\n\nBest regards,\nAcme Corp Finance Department",
     "tone": "Formal & Serious",
     "stage": 3
   },
   {
-    "timestamp": "2025-05-11T12:30:40.111222",
+    "timestamp": "2026-05-11T17:00:16.428416",
     "to": "sneha.p@designhub.io",
     "to_name": "Sneha Patel",
     "invoice_no": "INV-2024-004",
-    "subject": "FINAL NOTICE \u2013 Invoice #INV-2024-004 | \u20b989,000 \u2013 Immediate Action Required",
-    "body": "Dear Ms. Patel,\n\nThis is our final reminder regarding Invoice #INV-2024-004 for \u20b989,000, which is now 44 days overdue (due date: 28 March 2025).\n\nDespite multiple previous communications, this invoice remains unpaid. We must inform you that failure to remit payment within 24 hours will result in:\n\u2022 Escalation to our legal and recovery team\n\u2022 Suspension of all credit facilities\n\u2022 Potential impact on your business credit rating\n\nPlease act immediately:\n\n\ud83d\udd17 Pay Now: https://pay.acmecorp.com/invoice/INV-2024-004\n\ud83d\udcde Call Immediately: +91-9876543210\n\nAcme Corp Finance Department",
+    "subject": "Overdue Invoice INV-2024-004 for ₹89,000: Final Reminder",
+    "body": "Dear Sneha Patel,\n\nThis is your 4th and final reminder regarding the overdue invoice INV-2024-004 for ₹89,000, which was due on 2026-04-18 and is now 23 days overdue. We urge you to settle this amount immediately to avoid further escalation.\n\nTo pay your invoice, please click on this link: https://pay.acmecorp.com/invoice/INV-2024-004. Alternatively, you can call us at +91-9876543210 to discuss your payment options.\n\nWe appreciate your prompt attention to this matter, as it is crucial for us to resolve this outstanding balance.\n\nSincerely,\nAcme Corp Finance Department",
     "tone": "Stern & Urgent",
     "stage": 4
   },
   {
-    "timestamp": "2025-05-11T12:30:45.333444",
-    "to": "vikram.singh@logicorp.in",
-    "to_name": "Vikram Singh",
-    "invoice_no": "INV-2024-005",
-    "subject": "ESCALATION \u2013 Invoice #INV-2024-005 | \u20b92,34,000 \u2013 Flagged for Legal Review",
-    "body": "[ESCALATION FLAG \u2013 NO EMAIL SENT]\n\nRecord flagged for human/legal review.\nInvoice: INV-2024-005\nClient: Vikram Singh\nAmount: \u20b92,34,000\nDays Overdue: 57\n\nAction Required: Assign to finance manager for manual follow-up.",
-    "tone": "\ud83d\udea9 Flag for Legal",
-    "stage": 5
+    "timestamp": "2026-05-11T17:00:19.263384",
+    "to": "ananya.d@mediapulse.com",
+    "to_name": "Ananya Desai",
+    "invoice_no": "INV-2024-006",
+    "subject": "Overdue Invoice INV-2024-006 for ₹176,000",
+    "body": "Dear Ananya Desai,\n\nWe hope this email finds you well. We wanted to reach out to you regarding your outstanding invoice INV-2024-006, which was due on 2026-05-06. As it has been 5 days since the due date, we assume it may have been overlooked and wanted to send a gentle reminder.\n\nThe total amount due is ₹176,000. To settle this invoice, you can pay now by visiting our payment link: https://pay.acmecorp.com/invoice/INV-2024-006. If you have any questions or need assistance, please don't hesitate to call us at +91-9876543210.\n\nWe appreciate your prompt attention to this matter and look forward to receiving the payment soon.\n\nBest regards,\nAcme Corp Finance Department",
+    "tone": "Warm & Friendly",
+    "stage": 1
   },
   {
-    "timestamp": "2025-05-11T12:30:50.555666",
-    "to": "suresh.r@agritech.co.in",
-    "to_name": "Suresh Reddy",
-    "invoice_no": "INV-2024-011",
-    "subject": "ESCALATION \u2013 Invoice #INV-2024-011 | \u20b98,90,000 \u2013 Flagged for Legal Review",
-    "body": "[ESCALATION FLAG \u2013 NO EMAIL SENT]\n\nRecord flagged for human/legal review.\nInvoice: INV-2024-011\nClient: Suresh Reddy\nAmount: \u20b98,90,000\nDays Overdue: 71\n\nAction Required: Assign to finance manager for manual follow-up.",
-    "tone": "\ud83d\udea9 Flag for Legal",
-    "stage": 5
+    "timestamp": "2026-05-11T17:00:22.161939",
+    "to": "karthik.n@finserve.in",
+    "to_name": "Karthik Nair",
+    "invoice_no": "INV-2024-007",
+    "subject": "Overdue Payment: INV-2024-007 - ₹412,000",
+    "body": "Dear Karthik Nair,\n\nWe are writing to follow up on the payment for Invoice Number INV-2024-007, which is now 13 days overdue. As per our records, the amount of ₹412,000 is still pending. We understand that unforeseen delays can occur, and we are more than willing to work with you to find a solution.\n\nCould you please confirm a payment date for the outstanding amount? For your convenience, the payment can be made through this link: https://pay.acmecorp.com/invoice/INV-2024-007. If you are experiencing any difficulties in making the payment, please do not hesitate to reach out to us at +91-9876543210.\n\nWe appreciate your prompt attention to this matter, and we look forward to hearing back from you soon.\n\nBest regards,\nAcme Corp Finance Department",
+    "tone": "Polite but Firm",
+    "stage": 2
+  },
+  {
+    "timestamp": "2026-05-11T17:00:25.256225",
+    "to": "meera.j@healthplus.co",
+    "to_name": "Meera Joshi",
+    "invoice_no": "INV-2024-008",
+    "subject": "Overdue Invoice INV-2024-008 for ₹95,000",
+    "body": "Dear Meera Joshi,\n\nWe hope this email finds you well. We wanted to reach out to you regarding your invoice INV-2024-008, which was due on 2026-05-10. As it has been 1 day since the due date, we assume it may have been overlooked and we're sending a gentle reminder.\n\nThe amount due is ₹95,000. To settle this invoice, you can pay now by visiting https://pay.acmecorp.com/invoice/INV-2024-008 or contact us at +91-9876543210 for alternative payment options.\n\nWe appreciate your prompt attention to this matter and look forward to hearing from you soon.\n\nBest regards,\nAcme Corp Finance Department",
+    "tone": "Warm & Friendly",
+    "stage": 1
+  },
+  {
+    "timestamp": "2026-05-11T17:00:28.284057",
+    "to": "rohan.g@smartlogistics.in",
+    "to_name": "Rohan Gupta",
+    "invoice_no": "INV-2024-009",
+    "subject": "Overdue Invoice INV-2024-009 for ₹678,000",
+    "body": "Dear Mr. Rohan Gupta,\n\nWe are writing to express our escalating concern regarding the overdue payment for Invoice INV-2024-009, which is now 21 days past its due date of 2026-04-20. The total amount due remains ₹678,000.\n\nAs this is our third follow-up, we want to emphasize the importance of settling this outstanding balance to avoid any further action. The delayed payment is impacting our operations, and we urge you to respond to this email within the next 48 hours to discuss a payment plan or confirm the settlement of the invoice.\n\nTo facilitate a quick payment, you can use the following link: https://pay.acmecorp.com/invoice/INV-2024-009. If you are experiencing any difficulties, please do not hesitate to contact us at +91-9876543210.\n\nWe appreciate your prompt attention to this matter, and we look forward to hearing from you soon.\n\nBest regards,\nAcme Corp Finance Department",
+    "tone": "Formal & Serious",
+    "stage": 3
+  },
+  {
+    "timestamp": "2026-05-11T17:00:31.196680",
+    "to": "fatima.k@legalsync.com",
+    "to_name": "Fatima Khan",
+    "invoice_no": "INV-2024-012",
+    "subject": "Overdue Payment: INV-2024-012 for ₹210,000",
+    "body": "Dear Fatima Khan,\n\nWe are writing to follow up on the payment for Invoice INV-2024-012, which is now 8 days overdue. As per our records, the amount of ₹210,000 is still pending. We understand that unforeseen delays can occur, and we are more than willing to work with you to find a solution.\n\nTo avoid any additional delays or penalties, could you please confirm a payment date for the outstanding amount? For your convenience, you can make the payment online via this link: https://pay.acmecorp.com/invoice/INV-2024-012. If you are experiencing any difficulties, please do not hesitate to contact us at +91-9876543210.\n\nWe appreciate your prompt attention to this matter and look forward to hearing back from you soon.\n\nBest regards,\nAcme Corp Finance Department",
+    "tone": "Polite but Firm",
+    "stage": 2
   }
 ]

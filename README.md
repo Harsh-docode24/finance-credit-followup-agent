@@ -187,9 +187,9 @@ flowchart TD
 
 ### Prerequisites
 - Python 3.10 or higher
-- A Google Gemini API key (free at [Google AI Studio](https://aistudio.google.com/app/apikey))
-
-### Installation
+- **Primary LLM:** A Google Gemini API key (get one for free at [Google AI Studio](https://aistudio.google.com/app/apikey))
+  - *Steps: Sign in with Google → Click "Create API Key" → Copy the key.*
+- **Fallback LLM (Optional):** A Groq API key (get one for free at [Groq Console](https://console.groq.com/keys))
 
 ```bash
 # 1. Clone the repository
@@ -361,7 +361,7 @@ CRITICAL RULES (DO NOT VIOLATE):
 | Risk | Description | Mitigation Strategy |
 |------|-------------|-------------------|
 | **Prompt Injection** | Malicious input in CSV fields (e.g., client name = "Ignore all instructions...") | Input sanitisation — all fields are validated through Pydantic models with strict types. The LLM prompt uses structured templates where user data is clearly delimited from instructions. Output is parsed through `JsonOutputParser` with Pydantic validation. |
-| **Data Privacy / PII** | Credit records contain personal info (names, emails, amounts) | PII masking in logs (`mask_email()`, `mask_name()` functions). Local processing only — data never leaves the machine except for LLM API calls. The LLM sees only the minimum required fields. No full email bodies in console logs. |
+| **Data Privacy / PII** | Credit records contain personal info (names, emails, amounts) | PII masking in console logs (`mask_email()`, `mask_name()` functions). The local SQLite audit database (`audit_trail.db`) stores full names and emails for compliance, but it is strictly local-only and explicitly excluded from Git (`.gitignore`). Data never leaves the machine except for LLM API calls, and the LLM sees only the minimum required fields. |
 | **API Key Exposure** | Gemini API key or SMTP credentials leaked in code | Keys loaded via `python-dotenv` from `.env` file (never hardcoded). `.env` is in `.gitignore`. `.env.example` provided with placeholder values. |
 | **Hallucination Risk** | LLM generating wrong amounts, dates, or fake payment links | Structured output via Pydantic models with field validation. Low temperature (0.3) for consistency. All data fields are passed explicitly — the LLM formats but doesn't invent. Output validated against schema before sending. |
 | **Unauthorised Access** | Anyone triggering the agent endpoint | Streamlit dashboard runs locally (localhost only). No exposed API endpoints. Rate limiting via `MAX_EMAILS_PER_RUN` config cap. |

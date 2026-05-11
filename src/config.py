@@ -22,10 +22,10 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 LOG_DIR.mkdir(exist_ok=True)
 
 # ── LLM Configuration ─────────────────────────────────────
-LLM_PROVIDER = os.getenv("LLM_PROVIDER", "groq")  # "gemini" or "groq"
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "gemini")  # "gemini" or "groq"
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
-LLM_MODEL = os.getenv("LLM_MODEL", "llama-3.3-70b-versatile")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")  # Optional: fallback provider
+LLM_MODEL = os.getenv("LLM_MODEL", "gemini-2.0-flash")
 
 # ── Email Configuration ───────────────────────────────────
 EMAIL_MODE = os.getenv("EMAIL_MODE", "dry_run")  # "dry_run" or "smtp"
@@ -90,20 +90,35 @@ ESCALATION_MATRIX = {
 
 def get_escalation_stage(days_overdue: int, follow_up_count: int) -> int:
     """
-    Determine the escalation stage based on days overdue.
-    The follow_up_count is used to ensure we don't skip stages.
-    Returns stage number (1-5).
+    Determine the escalation stage based on BOTH days overdue and
+    the number of follow-ups already sent.
+
+    Strategy:
+      - days_stage:  derived from the day-range brackets in ESCALATION_MATRIX.
+      - followup_stage: follow_up_count + 1 (1st reminder → stage 1, etc.)
+      - final stage = max(days_stage, followup_stage), capped at 5.
+
+    This ensures tone never regresses: if 3 reminders were already sent,
+    the minimum stage is 4 regardless of days overdue.
+
+    Returns stage number (0 = not overdue, 1-5).
     """
     if days_overdue <= 0:
         return 0  # Not overdue
 
-    # Determine stage by days overdue
+    # Stage from days overdue
+    days_stage = 5  # default to escalation
     for stage, config in ESCALATION_MATRIX.items():
         low, high = config["trigger_days"]
         if low <= days_overdue <= high:
-            return stage
+            days_stage = stage
+            break
 
-    return 5  # Default to escalation for anything > 30 days
+    # Stage from follow-up history (follow_up_count=0 → stage 1, etc.)
+    followup_stage = min(follow_up_count + 1, 5)
+
+    # Use the higher of the two signals — tone never regresses
+    return max(days_stage, followup_stage)
 
 
 def validate_config() -> list[str]:
