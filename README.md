@@ -5,7 +5,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
 ![LangChain](https://img.shields.io/badge/LangChain-0.2+-green?logo=chainlink)
-![Gemini](https://img.shields.io/badge/Google_Gemini-1.5_Flash-orange?logo=google)
+![Gemini](https://img.shields.io/badge/Google_Gemini-2.0_Flash-orange?logo=google)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red?logo=streamlit)
 
 ---
@@ -135,7 +135,7 @@ flowchart TD
 |---|---------|---------------|
 | 1 | **Data Ingestion** | Reads CSV/Excel via pandas, validates with Pydantic models |
 | 2 | **Tone Escalation Engine** | 5-stage rule-based escalation matrix with configurable day ranges |
-| 3 | **Email Generation** | Google Gemini 1.5 Flash via LangChain with structured JSON output |
+| 3 | **Email Generation** | Google Gemini 2.0 Flash via LangChain with structured JSON output |
 | 4 | **Trigger Logic** | Automatic identification of overdue records + stage assignment |
 | 5 | **Send / Mock Send** | SMTP integration + safe dry-run mode (default) |
 | 6 | **Audit Trail** | SQLite database logging every email with full metadata |
@@ -146,11 +146,11 @@ flowchart TD
 
 ## 🛠️ Tech Stack & Rationale
 
-### LLM: Google Gemini 1.5 Flash (`gemini-1.5-flash`)
+### LLM: Google Gemini 2.0 Flash (`gemini-2.0-flash`)
 
 | Aspect | Detail |
 |--------|--------|
-| **Model** | `gemini-1.5-flash` (Google, version 2024+) |
+| **Model** | `gemini-2.0-flash` (Google, version 2024+) |
 | **Why this model?** | Fast, cost-effective, excellent at structured JSON output, generous free tier (15 RPM / 1M tokens/min), strong instruction-following for professional email tone |
 | **Alternatives considered** | GPT-4o (expensive for batch emails), Claude 3.5 Sonnet (cost), Llama 3 (local hosting complexity) |
 | **Temperature** | 0.3 — Low for consistent, professional output |
@@ -171,7 +171,7 @@ flowchart TD
 | Layer | Choice | Rationale |
 |-------|--------|-----------|
 | **Language** | Python 3.10+ | Industry standard for AI/ML |
-| **LLM** | Gemini 1.5 Flash | Fast, cheap, reliable JSON output |
+| **LLM** | Gemini 2.0 Flash | Fast, cheap, reliable JSON output |
 | **Agent Framework** | LangChain 0.2+ | Mature, great Gemini support |
 | **Data Source** | CSV/Excel (pandas) | Simple, portable, no infra needed |
 | **Data Validation** | Pydantic v2 | Type safety, prevents hallucination |
