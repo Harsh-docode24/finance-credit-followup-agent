@@ -193,7 +193,7 @@ flowchart TD
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/finance-credit-followup-agent.git
+git clone https://github.com/Harsh-docode24/finance-credit-followup-agent.git
 cd finance-credit-followup-agent
 
 # 2. Create virtual environment
