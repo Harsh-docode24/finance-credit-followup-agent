@@ -1,0 +1,13 @@
+invoice_no,client_name,contact_email,amount_due,currency,due_date,follow_up_count,payment_link
+INV-2024-001,Rajesh Kapoor,rajesh.kapoor@techsolutions.in,345000,INR,2026-05-08,0,https://pay.acmecorp.com/invoice/INV-2024-001
+INV-2024-002,Priya Sharma,priya.s@globalretail.com,128500,INR,2026-05-01,1,https://pay.acmecorp.com/invoice/INV-2024-002
+INV-2024-003,Amit Verma,amit.verma@buildcon.co.in,567000,INR,2026-04-25,2,https://pay.acmecorp.com/invoice/INV-2024-003
+INV-2024-004,Sneha Patel,sneha.p@designhub.io,89000,INR,2026-04-18,3,https://pay.acmecorp.com/invoice/INV-2024-004
+INV-2024-005,Vikram Singh,vikram.singh@logicorp.in,234000,INR,2026-04-05,4,https://pay.acmecorp.com/invoice/INV-2024-005
+INV-2024-006,Ananya Desai,ananya.d@mediapulse.com,176000,INR,2026-05-06,0,https://pay.acmecorp.com/invoice/INV-2024-006
+INV-2024-007,Karthik Nair,karthik.n@finserve.in,412000,INR,2026-04-28,1,https://pay.acmecorp.com/invoice/INV-2024-007
+INV-2024-008,Meera Joshi,meera.j@healthplus.co,95000,INR,2026-05-10,0,https://pay.acmecorp.com/invoice/INV-2024-008
+INV-2024-009,Rohan Gupta,rohan.g@smartlogistics.in,678000,INR,2026-04-20,2,https://pay.acmecorp.com/invoice/INV-2024-009
+INV-2024-010,Divya Menon,divya.m@edubridge.org,145000,INR,2026-05-12,0,https://pay.acmecorp.com/invoice/INV-2024-010
+INV-2024-011,Suresh Reddy,suresh.r@agritech.co.in,890000,INR,2026-03-25,4,https://pay.acmecorp.com/invoice/INV-2024-011
+INV-2024-012,Fatima Khan,fatima.k@legalsync.com,210000,INR,2026-05-03,1,https://pay.acmecorp.com/invoice/INV-2024-012

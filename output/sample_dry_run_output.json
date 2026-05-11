@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "2025-05-11T12:30:15.123456",
+    "to": "ananya.d@mediapulse.com",
+    "to_name": "Ananya Desai",
+    "invoice_no": "INV-2024-006",
+    "subject": "Quick Reminder \u2013 Invoice #INV-2024-006 | \u20b91,76,000 Due",
+    "body": "Hi Ananya,\n\nI hope you\u2019re doing well! This is a friendly reminder that Invoice #INV-2024-006 for \u20b91,76,000 was due on 01 May 2025.\n\nIf you have already processed this payment, please disregard this message. Otherwise, you can make a quick payment using the link below:\n\n\ud83d\udd17 Pay Now: https://pay.acmecorp.com/invoice/INV-2024-006\n\nIf you have any questions about this invoice, feel free to reach out.\n\nThank you!\n\nWarm regards,\nAcme Corp Finance Department\n\ud83d\udcde +91-9876543210",
+    "tone": "Warm & Friendly",
+    "stage": 1
+  },
+  {
+    "timestamp": "2025-05-11T12:30:22.654321",
+    "to": "priya.s@globalretail.com",
+    "to_name": "Priya Sharma",
+    "invoice_no": "INV-2024-002",
+    "subject": "Payment Reminder \u2013 Invoice #INV-2024-002 | \u20b91,28,500 (16 Days Overdue)",
+    "body": "Dear Priya,\n\nWe hope this message finds you well. We are writing to follow up on Invoice #INV-2024-002 for \u20b91,28,500, which was due on 25 April 2025 and is now 16 days overdue.\n\nWe understand that payments can sometimes be delayed, and we would appreciate it if you could confirm the expected payment date at your earliest convenience.\n\nPlease use the payment link below to process the payment:\n\n\ud83d\udd17 https://pay.acmecorp.com/invoice/INV-2024-002\n\nIf you have already made this payment, please share the transaction reference so we can update our records.\n\nThank you for your prompt attention to this matter.\n\nBest regards,\nAcme Corp Finance Department\n\ud83d\udcde +91-9876543210",
+    "tone": "Polite but Firm",
+    "stage": 2
+  },
+  {
+    "timestamp": "2025-05-11T12:30:31.987654",
+    "to": "amit.verma@buildcon.co.in",
+    "to_name": "Amit Verma",
+    "invoice_no": "INV-2024-003",
+    "subject": "IMPORTANT: Outstanding Payment \u2013 Invoice #INV-2024-003 | \u20b95,67,000 (31 Days Overdue)",
+    "body": "Dear Mr. Verma,\n\nDespite our previous reminders, Invoice #INV-2024-003 for \u20b95,67,000 remains unpaid as of today, now 31 days past its due date of 10 April 2025.\n\nWe must bring to your attention that continued non-payment may impact:\n\u2022 Your credit terms with Acme Corp\n\u2022 Future order processing\n\u2022 Our business relationship\n\nWe request your immediate attention to this matter. Please respond within 48 hours with either:\n1. Confirmation of payment, or\n2. A clear payment commitment date\n\n\ud83d\udd17 Pay Now: https://pay.acmecorp.com/invoice/INV-2024-003\n\ud83d\udcde Call: +91-9876543210\n\nRegards,\nAcme Corp Finance Department",
+    "tone": "Formal & Serious",
+    "stage": 3
+  },
+  {
+    "timestamp": "2025-05-11T12:30:40.111222",
+    "to": "sneha.p@designhub.io",
+    "to_name": "Sneha Patel",
+    "invoice_no": "INV-2024-004",
+    "subject": "FINAL NOTICE \u2013 Invoice #INV-2024-004 | \u20b989,000 \u2013 Immediate Action Required",
+    "body": "Dear Ms. Patel,\n\nThis is our final reminder regarding Invoice #INV-2024-004 for \u20b989,000, which is now 44 days overdue (due date: 28 March 2025).\n\nDespite multiple previous communications, this invoice remains unpaid. We must inform you that failure to remit payment within 24 hours will result in:\n\u2022 Escalation to our legal and recovery team\n\u2022 Suspension of all credit facilities\n\u2022 Potential impact on your business credit rating\n\nPlease act immediately:\n\n\ud83d\udd17 Pay Now: https://pay.acmecorp.com/invoice/INV-2024-004\n\ud83d\udcde Call Immediately: +91-9876543210\n\nAcme Corp Finance Department",
+    "tone": "Stern & Urgent",
+    "stage": 4
+  },
+  {
+    "timestamp": "2025-05-11T12:30:45.333444",
+    "to": "vikram.singh@logicorp.in",
+    "to_name": "Vikram Singh",
+    "invoice_no": "INV-2024-005",
+    "subject": "ESCALATION \u2013 Invoice #INV-2024-005 | \u20b92,34,000 \u2013 Flagged for Legal Review",
+    "body": "[ESCALATION FLAG \u2013 NO EMAIL SENT]\n\nRecord flagged for human/legal review.\nInvoice: INV-2024-005\nClient: Vikram Singh\nAmount: \u20b92,34,000\nDays Overdue: 57\n\nAction Required: Assign to finance manager for manual follow-up.",
+    "tone": "\ud83d\udea9 Flag for Legal",
+    "stage": 5
+  },
+  {
+    "timestamp": "2025-05-11T12:30:50.555666",
+    "to": "suresh.r@agritech.co.in",
+    "to_name": "Suresh Reddy",
+    "invoice_no": "INV-2024-011",
+    "subject": "ESCALATION \u2013 Invoice #INV-2024-011 | \u20b98,90,000 \u2013 Flagged for Legal Review",
+    "body": "[ESCALATION FLAG \u2013 NO EMAIL SENT]\n\nRecord flagged for human/legal review.\nInvoice: INV-2024-011\nClient: Suresh Reddy\nAmount: \u20b98,90,000\nDays Overdue: 71\n\nAction Required: Assign to finance manager for manual follow-up.",
+    "tone": "\ud83d\udea9 Flag for Legal",
+    "stage": 5
+  }
+]
